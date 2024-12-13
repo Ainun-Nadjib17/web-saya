@@ -158,9 +158,9 @@
   <!-- About Me Section -->
   <section class="section-container" id="about-section">
     <h2>Tentang Kami</h2>
-    <p>Kerupuk Fatkhur Adalah Kerupuk dengan kualitas bagus,
+    <p>Kerupuk Fatkhur adalah kerupuk dengan kualitas bagus,
        <p>dengan harga yang terjangkau. Kami selalu mengutamakan kepuasan pelanggan dengan menyediakan,</p>
-       <p>Kerupuk yang sehat dan berkualitas.</p>
+       <p>kerupuk yang sehat dan berkualitas.</p>
   </section>
 
   <!-- Contact Me Section -->
@@ -184,12 +184,10 @@
 
   <script>
     const products = [
-      { name: "Kerupuk porsi biasa", price: "Rp.5000", image: "Kerupuk1.jpg", description: "Kerupuk Harga Terjangkau dengan Kualitas terbaik." },
-      { name: "Kerupuk Porsi Sedang", price: "Rp.15,000", image: "kerupuk3.jpg", description: "Kerupuk berkualitas dengan porsi sedang." },
-      { name: "Kerupuk Porsi Besar", price: "Rp25000", image: "kerupuk2.jpg", description: "Kerupuk dengan kualitas terbaik dengan porsi banyak." },
-     
+      { name: "Kerupuk porsi biasa", price: "Rp.5000", image: "./img/Kerupuk1.jpg", description: "Kerupuk Harga Terjangkau dengan Kualitas terbaik.", portion: "29 Biji Kerupuk" },
+      { name: "Kerupuk Porsi Sedang", price: "Rp.15,000", image: "./img/kerupuk3.jpg", description: "Kerupuk berkualitas dengan porsi sedang.", portion: "89 Biji Kerupuk" },
+      { name: "Kerupuk Porsi Besar", price: "Rp25000", image: "./img/kerupuk2.jpg", description: "Kerupuk dengan kualitas terbaik dengan porsi banyak.", portion: "145 Biji Kerupuk" },
     ];
-   
 
     const productsContainer = document.getElementById("products-container");
 
@@ -200,7 +198,7 @@
         <img src="${product.image}" alt="${product.name}">
         <h3>${product.name}</h3>
         <p>${product.price}</p>
-        <button onclick="viewDetail('${product.name}', '${product.price}', '${product.description}', '${product.image}')">Lihat Detail</button>
+        <button onclick="viewDetail('${product.name}', '${product.price}', '${product.description}', '${product.image}', '${product.portion || ""}')">Lihat Detail</button>
       `;
       productsContainer.appendChild(card);
     }
@@ -209,9 +207,9 @@
       products.forEach(product => createProduct(product));
     }
 
-    function viewDetail(name, price, description, image) {
+    function viewDetail(name, price, description, image, portion) {
       const urlParams = new URLSearchParams({
-        name, price, description, image
+        name, price, description, image, portion
       });
       window.location.href = `kerupukdetail.html?${urlParams.toString()}`;
     }
