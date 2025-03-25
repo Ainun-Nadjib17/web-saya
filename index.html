@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
@@ -18,7 +18,7 @@
         }
 
         .header {
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             color: #fcd303;
             padding: 1rem 2rem;
             display: flex;
@@ -28,6 +28,11 @@
             top: 0;
             width: 100%;
             z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
         }
 
         .header nav a {
@@ -48,7 +53,7 @@
             gap: 15px;
             padding: 20px;
             scroll-behavior: smooth;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
             margin: 20px;
         }
@@ -61,13 +66,13 @@
             color: #333;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .product-card:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
         }
 
         .product-card img {
@@ -95,21 +100,48 @@
             background: #e0a800;
         }
 
-        .section-container {
-            padding: 40px;
+        .about-container {
+            padding: 50px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 10px;
             margin: 20px;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
+            color: #fff;
+        }
+
+        .about-container h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .about-container p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-container {
+            padding: 40px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .contact-container a {
+            color: #ffc107;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         footer {
             background: #111;
             color: white;
             text-align: center;
-            padding: 10px;
+            padding: 15px;
             margin-top: 10px;
+            font-size: 1rem;
         }
     </style>
 </head>
@@ -117,7 +149,7 @@
     <header class="header">
         <h1>Kerupuk Fatkhur</h1>
         <nav>
-            <a href="#products">Products</a>
+            <a href="#products">Produk</a>
             <a href="#about-section">Tentang Kami</a>
             <a href="#contact-section">Kontak</a>
         </nav>
@@ -125,15 +157,15 @@
 
     <section class="products-container" id="products-container"></section>
 
-    <section class="section-container" id="about-section">
+    <section class="about-container" id="about-section">
         <h2>Tentang Kami</h2>
-        <p>Kerupuk Fatkhur menawarkan kualitas terbaik dengan harga terjangkau.</p>
+        <p>Kerupuk Fatkhur menghadirkan cita rasa autentik dengan bahan-bahan berkualitas dan harga yang terjangkau. Kami memastikan bahwa setiap kerupuk yang kami produksi renyah, gurih, dan cocok untuk segala jenis hidangan.</p>
     </section>
 
-    <section class="section-container" id="contact-section">
+    <section class="contact-container" id="contact-section">
         <h2>Hubungi Kami</h2>
         <p><strong>Telepon:</strong> 089656193030</p>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/qr/IAPZSKJKG6VMP1" target="_blank">WhatsApp Saya</a></p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/qr/IAPZSKJKG6VMP1" target="_blank">WhatsApp Kami</a></p>
     </section>
 
     <footer>
