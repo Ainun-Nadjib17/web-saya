@@ -215,6 +215,10 @@
             document.querySelector(".nav-menu").classList.toggle("active");
         }
 
+        function viewDetail(name, price, image) {
+            window.location.href = `kerupukdetail.html?name=${encodeURIComponent(name)}&price=${encodeURIComponent(price)}&image=${encodeURIComponent(image)}`;
+        }
+
         document.addEventListener("DOMContentLoaded", loadProducts);
     </script>
 </body>
