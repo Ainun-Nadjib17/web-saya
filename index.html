@@ -13,12 +13,12 @@
         }
 
         body {
-            background: url('./img/bg3.PNG') no-repeat center center/cover;
-            background-color:black;
+            background: linear-gradient(to bottom, #1a1a2e, #16213e);
+            color: white;
         }
 
         .header {
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(10, 10, 50, 0.9);
             color: #fcd303;
             padding: 1rem 2rem;
             display: flex;
@@ -32,11 +32,11 @@
         }
 
         .header h1 {
-            font-size: 1.8rem;
+            font-size: 2rem;
         }
 
         .header nav a {
-            color: #fff;
+            color: #fcd303;
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
@@ -53,7 +53,7 @@
             gap: 15px;
             padding: 20px;
             scroll-behavior: smooth;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             margin: 20px;
         }
@@ -62,17 +62,17 @@
             flex: 0 0 auto;
             width: 280px;
             text-align: center;
-            background: #fff;
-            color: #333;
+            background: #222;
+            color: #fff;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .product-card:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.3);
         }
 
         .product-card img {
@@ -86,7 +86,7 @@
         }
 
         .product-card button {
-            background-color: #ffc107;
+            background: #fcd303;
             color: #333;
             border: none;
             padding: 10px;
@@ -100,44 +100,29 @@
             background: #e0a800;
         }
 
-        .about-container {
+        .about-container, .contact-container {
             padding: 50px;
             text-align: center;
             background: rgba(255, 255, 255, 0.15);
             border-radius: 10px;
             margin: 20px;
             backdrop-filter: blur(12px);
-            color: #fff;
+            color: white;
         }
 
-        .about-container h2 {
+        .about-container h2, .contact-container h2 {
             font-size: 2rem;
             margin-bottom: 15px;
         }
 
-        .about-container p {
-            color: black;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-container {
-            padding: 40px;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 10px;
-            margin: 20px;
-        }
-
         .contact-container a {
-            color: #ffc107;
+            color: #fcd303;
             text-decoration: none;
             font-weight: bold;
         }
 
         footer {
-            background: #111;
+            background: #0a0a2a;
             color: white;
             text-align: center;
             padding: 15px;
