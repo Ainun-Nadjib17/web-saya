@@ -29,15 +29,19 @@
             width: 100%;
             z-index: 1000;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            flex-wrap: wrap;
+            text-align: center;
         }
 
         .header h1 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
         }
 
         .header nav {
             display: flex;
             gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .header nav a {
@@ -59,7 +63,8 @@
             padding: 20px;
             background: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
-            margin: 20px;
+            margin: 20px auto;
+            max-width: 1200px;
         }
 
         .product-card {
@@ -109,9 +114,10 @@
             text-align: center;
             background: rgba(255, 255, 255, 0.15);
             border-radius: 10px;
-            margin: 20px;
+            margin: 20px auto;
             backdrop-filter: blur(12px);
             color: #fff;
+            max-width: 800px;
         }
 
         .about-container h2, .contact-container h2 {
@@ -137,12 +143,10 @@
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
-                align-items: center;
-                text-align: center;
                 padding: 1rem;
             }
             .header h1 {
-                font-size: 1.2rem;
+                font-size: 1.5rem;
             }
             .header nav {
                 flex-direction: column;
@@ -187,33 +191,5 @@
     <footer>
         &copy; 2025 Kerupuk Fatkhur
     </footer>
-
-    <script>
-        const products = [
-            { name: "Kerupuk Porsi Biasa", price: "Rp.5.000", image: "Kerupuk1.jpg" },
-            { name: "Kerupuk Porsi Sedang", price: "Rp.15.000", image: "kerupuk3.jpg" },
-            { name: "Kerupuk Porsi Besar", price: "Rp.25.000", image: "kerupuk2.jpg" }
-        ];
-
-        const productsContainer = document.getElementById("products-container");
-
-        function createProduct(product) {
-            const card = document.createElement("div");
-            card.classList.add("product-card");
-            card.innerHTML = `
-                <img src="${product.image}" alt="${product.name}">
-                <h3>${product.name}</h3>
-                <p>${product.price}</p>
-                <button onclick="viewDetail('${product.name}', '${product.price}', '${product.image}')">Lihat Detail</button>
-            `;
-            productsContainer.appendChild(card);
-        }
-
-        function loadProducts() {
-            products.forEach(createProduct);
-        }
-
-        document.addEventListener("DOMContentLoaded", loadProducts);
-    </script>
 </body>
 </html>
