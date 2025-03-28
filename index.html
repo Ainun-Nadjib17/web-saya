@@ -14,12 +14,13 @@
 
         body {
             background: url('./img/bg3.PNG') no-repeat center center/cover;
-            background-color:black;
+            background-color: #121212;
+            color: #fff;
         }
 
         .header {
-            background: rgba(0, 0, 0, 0.9);
-            color: #fcd303;
+            background: linear-gradient(90deg, #ff9800, #ff5722);
+            color: #fff;
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
@@ -28,60 +29,83 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            flex-wrap: wrap;
-            text-align: center;
+            box-shadow: 0 4px 8px rgba(255, 87, 34, 0.5);
         }
 
         .header h1 {
-            font-size: 1.8rem;
+            font-size: 2rem;
         }
 
-        .header nav {
+        .nav-menu {
             display: flex;
             gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
         }
 
-        .header nav a {
+        .nav-menu a {
             color: #fff;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s;
         }
 
-        .header nav a:hover {
-            color: #07f7ff;
+        .nav-menu a:hover {
+            color: #000;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                background: #ff5722;
+                position: absolute;
+                top: 60px;
+                right: 10px;
+                width: 150px;
+                border-radius: 5px;
+                text-align: center;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
         }
 
         .products-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            overflow-x: auto;
             gap: 15px;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
+            scroll-behavior: smooth;
+            background: rgba(255, 87, 34, 0.1);
             border-radius: 10px;
-            margin: 20px auto;
-            max-width: 1200px;
+            margin: 20px;
         }
 
         .product-card {
-            width: 90%;
-            max-width: 280px;
+            flex: 0 0 auto;
+            width: 280px;
             text-align: center;
-            background: #fff;
-            color: #333;
+            background: #222;
+            color: #fff;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 10px rgba(255, 87, 34, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .product-card:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 6px 12px rgba(255, 87, 34, 0.5);
         }
 
         .product-card img {
@@ -95,8 +119,8 @@
         }
 
         .product-card button {
-            background-color: #ffc107;
-            color: #333;
+            background-color: #ff5722;
+            color: #fff;
             border: none;
             padding: 10px;
             margin: 10px;
@@ -106,69 +130,39 @@
         }
 
         .product-card button:hover {
-            background: #e0a800;
+            background: #ff9800;
         }
 
         .about-container, .contact-container {
-            padding: 30px;
+            padding: 50px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 87, 34, 0.2);
             border-radius: 10px;
-            margin: 20px auto;
-            backdrop-filter: blur(12px);
-            color: #fff;
-            max-width: 800px;
+            margin: 20px;
+            backdrop-filter: blur(10px);
         }
 
-        .about-container h2, .contact-container h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
-        .about-container p, .contact-container p {
-            font-size: 1rem;
-            max-width: 600px;
-            margin: 0 auto;
+        .contact-container a {
+            color: #ff9800;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         footer {
-            background: #111;
+            background: #ff5722;
             color: white;
             text-align: center;
             padding: 15px;
             margin-top: 10px;
             font-size: 1rem;
         }
-
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                padding: 1rem;
-            }
-            .header h1 {
-                font-size: 1.5rem;
-            }
-            .header nav {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .products-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            .product-card {
-                width: 100%;
-            }
-            .about-container, .contact-container {
-                padding: 20px;
-            }
-        }
     </style>
 </head>
 <body>
     <header class="header">
         <h1>Kerupuk Fatkhur</h1>
-        <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav class="nav-menu">
             <a href="#products">Produk</a>
             <a href="#about-section">Tentang Kami</a>
             <a href="#contact-section">Kontak</a>
@@ -179,7 +173,7 @@
 
     <section class="about-container" id="about-section">
         <h2>Tentang Kami</h2>
-        <p>Kerupuk Fatkhur menghadirkan cita rasa autentik dengan bahan-bahan berkualitas dan harga yang terjangkau. Kami memastikan bahwa setiap kerupuk yang kami produksi renyah, gurih, dan cocok untuk segala jenis hidangan.</p>
+        <p>Kerupuk Fatkhur menghadirkan cita rasa autentik dengan bahan-bahan berkualitas dan harga yang terjangkau.</p>
     </section>
 
     <section class="contact-container" id="contact-section">
@@ -191,5 +185,37 @@
     <footer>
         &copy; 2025 Kerupuk Fatkhur
     </footer>
+
+    <script>
+        const products = [
+            { name: "Kerupuk Porsi Biasa", price: "Rp.5.000", image: "Kerupuk1.jpg" },
+            { name: "Kerupuk Porsi Sedang", price: "Rp.15.000", image: "kerupuk3.jpg" },
+            { name: "Kerupuk Porsi Besar", price: "Rp.25.000", image: "kerupuk2.jpg" }
+        ];
+
+        const productsContainer = document.getElementById("products-container");
+
+        function createProduct(product) {
+            const card = document.createElement("div");
+            card.classList.add("product-card");
+            card.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p>${product.price}</p>
+                <button onclick="viewDetail('${product.name}', '${product.price}', '${product.image}')">Lihat Detail</button>
+            `;
+            productsContainer.appendChild(card);
+        }
+
+        function loadProducts() {
+            products.forEach(createProduct);
+        }
+
+        function toggleMenu() {
+            document.querySelector(".nav-menu").classList.toggle("active");
+        }
+
+        document.addEventListener("DOMContentLoaded", loadProducts);
+    </script>
 </body>
 </html>
